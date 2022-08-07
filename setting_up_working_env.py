@@ -91,6 +91,67 @@ notes.insert(3, 100)
 # Sözlük
 ####################################
 
+dictionary = {"REG":["RMSE",10],
+              "LOG":["MSE",20],
+              "CART":["SSE",30]}
+dictionary = {"REG": 10,
+              "LOG":20,
+              "CART":30}
+####################################
+# Key Sorgulama
+####################################
+
+"RE" in dictionary
+
+####################################
+# Key'e Value Sorgulama
+####################################
+
+dictionary["REG"]
+dictionary.get("REG")
+
+####################################
+# Value Değiştirmek
+####################################
+
+dictionary["REG"] = ["YSA", 10]
+
+####################################
+# Tüm Key'lere Değiştirmek
+####################################
+
+dictionary.values()
+
+####################################
+# Tüm Key'leri Tuple'ye Değiştirmek
+####################################
+
+dictionary.items()
+
+####################################
+#  Key'lerin değerini güncellemek
+####################################
+
+dictionary.update({"REG":11})
 
 
+####################################
+#  Key'lerin değerini güncellemek
+####################################
+
+set1 = set([1, 3, 5])
+set2 = set([1, 2, 3])
+
+set1.difference(set2) # set1-set2
+set2.difference(set1) # set2-set1
+
+set1.symmetric_difference(set2) #Simetrik farklar
+
+set1.intersection(set2) #Kesişim
+
+set1.union(set2) #iki küme birleşimi
+
+set1.isdisjoint(set2) #iki kesişim boş mu
+
+set2.issuperset(set1) #Bir küme diğerini kapsıyor mu?
 
