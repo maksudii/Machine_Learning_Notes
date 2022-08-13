@@ -110,3 +110,4 @@ new_dic = {col : agg_list for col in num_cols}
 df[num_cols].head()
 
 df[num_cols].agg(new_dic)
+
