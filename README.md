@@ -1,5 +1,5 @@
-# Miuul_Summercamp
 
-## Merhaba, Miuul ile ML makine öğrenmesi yaz kampı ders notlarıma hoş geldiniz!
+
+## Merhaba, Makina Öğrenmesi ve pyhton ile veri analizi üzerine aldığım notları paylaşıyorum
 
 ### Elimden geldiğince açıklayıcı olmaya çalışacağım 😊
