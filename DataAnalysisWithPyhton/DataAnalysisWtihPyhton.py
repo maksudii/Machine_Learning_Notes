@@ -34,3 +34,5 @@ np.random.normal(10 , 4 , (3,4)) #ortalaması 10 St.Sapması 4 olan 4'e 3 oranı
 
 
 
+
+
