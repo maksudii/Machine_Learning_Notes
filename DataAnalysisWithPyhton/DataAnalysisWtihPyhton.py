@@ -31,6 +31,22 @@ np.random.random_integers(0 , 10 , size= 10) # Belirlenen sayılar arasında ras
 
 np.random.normal(10 , 4 , (3,4)) #ortalaması 10 St.Sapması 4 olan 4'e 3 oranında tablo oluşurdu
 
+##############################
+# Numpy Array Özellikleri
+##############################
+
+# ndim: boyut sayısı
+# shape: boyut bilgisi
+# size: toplam eleman sayısı
+# dtype: array veri tipi
+
+RandomVeri = np.random.randint(10, size=5)
+
+RandomVeri.ndim #boyut sayısı
+RandomVeri.shape #boyut bilgisi
+RandomVeri.size #toplam eleman sayısı
+RandomVeri.dtype #array veri tipi
+
 
 
 
