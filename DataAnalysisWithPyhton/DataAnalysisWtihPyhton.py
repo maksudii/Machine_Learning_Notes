@@ -49,6 +49,80 @@ RandomVeri.dtype #array veri tipi
 
 
 
+##############################
+# ReShaping
+##############################
+
+RandomVeriSet = np.random.randint(10, size=(3, 5))
+RandomVeriSet.reshape(3, 3) #Üretilen Sayılardan şekillendirdi
+
+##############################
+# Index
+##############################
+
+RandomVeriSet[0]
+RandomVeriSet[0:5]
+RandomVeriSet[0] = 14 # Sıfırıncı indexteki sayıyı değişitirir
+
+RandomVeriSet[1, 1] # Satır sütün index konumları
+
+RandomVeriSet[:, 1] # Sütun Seçimi
+
+RandomVeriSet[0:2, 0:3] # Satırdan seçimler
+
+##############################
+# Fancy Index
+##############################
+import numpy as np
+R = np.arange(0, 30, 3)
+
+catch = [1, 2, 3]
+R[catch]  # istenilen indexleri görüntüler  # arange(start, stop, step)
+
+
+##############################
+# Numpy Koşullu İşlemler
+##############################
+
+n = np.array([1, 2, 3, 4, 5])
+
+# 3'ten küçük sayıları yazdır
+
+print("Numpy")
+ab = n[n < 3]
+print(ab)
+
+print(n[n > 3])  # 3  küçükleri al
+print(n[n != 3]) # 3 Harici sayıları al
+print(n[n == 3]) # 3'e eşit sayıları al
+print(n[n >= 3]) # 3'e büyük eşit sayıları al
+
+# Numpy array içerisinde işlem yapılırken parantez içine yazılan işlem bütün array'e uygulanır.
+#
+print(n / 5)        # Her bölümü 5'e böler
+print(n * 5 / 10)   # Her bölümü 5 ile çarpıp 10'a böler
+print(n ** 2)       # Üslü Sayıları ifade eder
+print(n - 1)        # Her sayıdan 1 çıkartır
+
+# Numpy da matematiksel işlemleri yaparken numpy özel fonksiyonlarını da  kullanabiliriz.
+
+print(np.subtract(n, 100))    # subtract()    Girilen değerlerden  eksiltir.
+print(np.add(n, 0))         # add()         Girilen değerden sonrasında array eleman sayısınca ekler.
+print(np.mean(n))           # mean()        Ortalamasını alır.
+print(np.min(n))            # min()         Küçüğünü alır.
+print(np.max(n))            # max()         En büyüğünü alır.
+print(np.sum(n))            # sum()         Toplamını alır.
+print(np.var(n))            # var()         Varyans alır
 
 
 
+#######################
+# NumPy ile İki Bilinmeyenli Denklem Çözümü
+#######################
+
+# 5x + y = 12
+# x + 3y = 10
+
+a = np.array([[5, 1], [1, 3]])
+b = np.array([12, 10])
+print(np.linalg.solve(a, b)) # linalg.solve() fonksiyonu ile denklemi çözümler.
