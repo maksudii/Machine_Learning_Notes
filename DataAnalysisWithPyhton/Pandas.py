@@ -1,23 +1,24 @@
+#################################
 # Pandas Kütüphanesi
-
+#################################
 # Pandas Serileri
-
+#################################
 
 import pandas as pd
 import seaborn as sns
 import numpy as np
 
 s = pd.Series([10, 77, 12, 4, 5])
-print(s)            # .series() ile pandas serisi oluşturulur.
-print(type(s))
-print(s.index)      # .index() ile pandas serisinin indexi oluşturulur.
-print(s.dtype)      # .dtype() ile pandas serisinin tipini verir.
-print(s.size)       # .size() ile pandas serisinin boyutunu verir.
-print(s.ndim)       # .ndim() ile pandas serisinin boyutlarını verir.
-print(s.values)     # .values() ile pandas serisinin değerlerini verir.
+print(s)            # Hücreleri numarandırılır
+print(type(s))      # Serilerin türleri sogular
+print(s.index)      # İndexi oluşturulur.
+print(s.dtype)      # Serilerin tipini verir.
+print(s.size)       # Boyutunu türünü verir.
+print(s.ndim)       # Liste sayısını verir.
+print(s.values)     # Değerlerin yazdırır.
 print(type(s.values))
-print(s.head(3))    # .head() ile pandas serisinin başındaki 3 değerini verir.
-print(s.tail(3))    # .tail() ile pandas serisinin sonundaki 3 değerini verir.
+print(s.head(3))    # Başındaki 3 değerini verir.
+print(s.tail(3))    # Sonundaki 3 değerini verir.
 
 # Veri Okuma (Reading Data)
 df = pd.read_csv("datasets/advertising.csv")
@@ -25,22 +26,28 @@ df = pd.read_csv("datasets/advertising.csv")
 print(df.head())
 a = sns.load_dataset("titanic")  # .load_dataset() ile titanic verisetini pandas serisi olarak okur.
 print(a.head())
-print(a.tail())
-print(a.shape)                      # .shape() ile veri setinin boyutlarını verir.
-print(a.info())                     # .info() ile veri setinin bilgilerini verir.
-print(a.columns)                    # .columns() ile veri setinin sütunlarını verir.
-print(a.index)                      # .index() ile veri setinin indexlerini verir.
-print(a.describe().T)               # .describe() ile veri setinin özet bilgilerini verir. T ile transpose edilir.
-print(a.isnull().values.any())
-# .isnull() ile veri setinin boş değerlerinin varlığını verir. isnull().values.any() ile boş değerlerin varlığını verir.
 
-print(a.isnull().sum())             # isnull().sum() ile veri setinin boş değerlerinin sayısını verir.
-print(a["sex"].head())
-print(a["sex"].value_counts())
+print(a.tail())
+
+print(a.shape)                      # csv dosyasının boyutlarını verir.
+
+print(a.info())                     # Veri setinin bilgilerini verir.
+
+print(a.columns)                    # Veri setinin sütun sayılarını verir.
+
+print(a.index)                      # Veri setinin indexlerini verir.
+
+print(a.describe().T)               # Veri setinin özet bilgilerini verir. T ile transpose edilir.
+
+print(a.isnull().values.any())      # .isnull() ile veri setinin boş değerlerinin varlığını yazdırır. isnull().values.any() ile boş değerlerin varlığını yazdırır
+
+print(a.isnull().sum())             # isnull().sum() ile veri setinin boş değerlerin toplam sayısını verir.
+print(a["sex"].head())              # Seçilen cinsiyetin head'ini yazdırır
+print(a["sex"].value_counts())      # Seçilen kolondaki özeti verir
 
 # Pandas'ta Seçim İşlemleri (Selection in Pandas)
-print(a.index)
-print(a[0: 13])
+print(a.index)          # İndex Özeti
+print(a[0: 13])         # Listeden seçim
 
 # .drop() ile silme işlemi yapılır. Inplace = true yaparsak kalıcı silme işlemi gerçekleştirir.
 # axis = 0 yaparsak satırları siler.
@@ -237,4 +244,3 @@ print(pd.merge(df3, df4))
 # concat() fonksiyonu ile birleştirme işlemleri yapılır.
 # merge() fonksiyonu ile birleştirme işlemleri yapılır.
 
-range
