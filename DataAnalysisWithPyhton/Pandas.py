@@ -236,3 +236,5 @@ print(pd.merge(df3, df4))
 
 # concat() fonksiyonu ile birleştirme işlemleri yapılır.
 # merge() fonksiyonu ile birleştirme işlemleri yapılır.
+
+range
