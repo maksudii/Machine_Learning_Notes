@@ -110,24 +110,24 @@ print(a.loc[0:3, col_names])
 # loc ile sütun ismine göre sutun seçimi yapılır. Ama iloc ile sutun ismine göre sutun seçimi yapılamaz.
 
 # Koşullu Seçim (Conditional Selection)
-print(a[a["age"] > 50].head())  # age sütunu 50 den büyük olanları seçer.
-print(a[a["age"] > 50].count())  # age sütunu 50 den büyük olanların sayısını verir.
-print(a.loc[a["age"] > 50, ["age", "class"]].head())  # age sütunu 50 den büyük olanların age ve class sütunlarını seçer.
+print(a[a["age"] > 50].head())                              # age sütunu 50 den büyük olanları seçer.
+print(a[a["age"] > 50].count())                             # age sütunu 50 den büyük olanların sayısını verir.
+print(a.loc[a["age"] > 50, ["age", "class"]].head())        # age sütunu 50 den büyük olanların age ve class sütunlarını seçer.
 print(a.loc[(a["age"] > 50) & (a["sex"] == "male"), ["age", "class"]].head())  # Yaşı 50'den büyük ve cinsiyeti erkek olan age ve class koşullarını seç.
 df_new = a.loc[(a["age"] > 50) & (a["sex"] == "male") & (
         (a["embark_town"] == "Cherbourg") | (a["embark_town"] == "Southampton")), ["age", "class", "embark_town"]]
 # Yaşı 50'den büyük ve cinsiyeti erkek olanları ve Cherbourg ve Southampton'da olanları seç. age, class, embark_town sütunlarını yaz.
 
-print(df_new["embark_town"].value_counts())
+print(df_new["embark_town"].value_counts()) # Atanan değerleri saydırır
 
 # Toplulaştırma ve Gruplama (Aggregation & Grouping)
-# - count()
-# - first()
-# - last()
-# - mean()
-# - median()
-# - min()
-# - max()
+# - count() Say
+# - first() İlk Değer
+# - last()  Son Değer
+# - mean()  Ortalaması
+# - median()Medyanı
+# - min()   Minimum Değeri
+# - max()   Max Değeri
 # - std()
 # - var()
 # - sum()
@@ -234,3 +234,6 @@ print(pd.merge(df3, df4))
 # concat() fonksiyonu ile birleştirme işlemleri yapılır.
 # merge() fonksiyonu ile birleştirme işlemleri yapılır.
 
+import pandas as pd
+series = pd.Series ( [ 1,2,3 ] )
+series ** 2
