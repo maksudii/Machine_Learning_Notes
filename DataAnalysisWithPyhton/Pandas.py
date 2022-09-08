@@ -26,33 +26,27 @@ df = pd.read_csv("datasets/advertising.csv")
 print(df.head())
 a = sns.load_dataset("titanic")  # .load_dataset() ile titanic verisetini pandas serisi olarak okur.
 print(a.head())
-
 print(a.tail())
-
 print(a.shape)                      # csv dosyasının boyutlarını verir.
-
-print(a.info())                     # Veri setinin bilgilerini verir.
-
+print(a.info())                     # Veri setinin bilgilerini verir( Kolon, Dosya tipleri, Boşlukları, değişken tipleri, boyut büyüklüğü.)
 print(a.columns)                    # Veri setinin sütun sayılarını verir.
-
 print(a.index)                      # Veri setinin indexlerini verir.
-
 print(a.describe().T)               # Veri setinin özet bilgilerini verir. T ile transpose edilir.
-
 print(a.isnull().values.any())      # .isnull() ile veri setinin boş değerlerinin varlığını yazdırır. isnull().values.any() ile boş değerlerin varlığını yazdırır
-
 print(a.isnull().sum())             # isnull().sum() ile veri setinin boş değerlerin toplam sayısını verir.
 print(a["sex"].head())              # Seçilen cinsiyetin head'ini yazdırır
 print(a["sex"].value_counts())      # Seçilen kolondaki özeti verir
 
+################################################
 # Pandas'ta Seçim İşlemleri (Selection in Pandas)
+################################################
 print(a.index)          # İndex Özeti
-print(a[0: 13])         # Listeden seçim
+print(a[0: 13])         # Listeden satır seçim,
 
 # .drop() ile silme işlemi yapılır. Inplace = true yaparsak kalıcı silme işlemi gerçekleştirir.
 # axis = 0 yaparsak satırları siler.
 # axis = 1 yaparsak sütunları siler.
-print(a.drop(0, axis=0).head)
+print(a.drop(0, axis=0).head) # Yani sıfırıncı satır silinir.
 
 delete_indexes = [1, 3, 5, 7]
 print(a.drop(delete_indexes, axis=0).head(10))
@@ -64,10 +58,8 @@ print(a.drop(delete_indexes, axis=0).head(10))
 print(a["age"].head())
 print(a.age.head())
 
-a.index = a["age"]
-
-# Indexi değişkene çevirme
-a["age"] = a.index
+a.index = a["age"]  # Indexi değişkene çevirme
+a["age"] = a.index  # Değişkeni Indexe çevirme
 
 # reset_index() ile indexleri sıfırlar.
 print(a.drop("age", axis=1, inplace=True))
@@ -89,28 +81,28 @@ print(a[["age", "alive"]])
 # Data frame kalması için iki köşeli parantez kullanılır.
 
 col_names = ["age", "adult_male", "alive"]
-print(a[col_names])
+print(a[col_names])                     #Titanic Veri setinden seçilen sütunları yazdırır
 
-a["age2"] = a["age"] ** 2
+a["age2"] = a["age"] ** 2               # Yaşların karesini alarak yeni sütun oluşturur
 print(a)
 
-a["age3"] = a["age"] / a["age2"]
+a["age3"] = a["age"] / a["age2"]        # Oluşturulan yaşlar karesini yaşlara böler
 print(a)
 
-print(a.drop("age3", axis=1).head())
+print(a.drop("age3", axis=1).head())    # Karesini alip böldüğümüz Age3 Sütununu droplar
 
 print(a.drop(col_names, axis=1).head())
 print(a.loc[:, ~a.columns.str.contains("age")].head())  # ~ a.columns.str.contains("age") ile age sütunu  yok eder.
 
 # iloc: integer based selection. iloc ile sütun ve satır seçimi yapılır.
 print(a.iloc[0: 3])
-print(a.iloc[0, 0])  # iloc[satir, sutun]
+print(a.iloc[0, 0])  # iloc [   satir, sutun]
 
 # loc: label based selection. Dizinden belirli bir sütun veya satır seçimi yapılır.
-print(a.loc[0: 3])
+print(a.loc[0: 3])      # Satırdan ve Sütundan 3'er değişken seç
 
-print(a.iloc[0:3, 0:3])
-print(a.loc[0:3, "age"])
+print(a.iloc[0:3, 0:3])     # Satır Sütun Seçimi
+print(a.loc[0:3, "age"])    # Sütun sayısını
 
 col_names = ["age", "embarked", "alive"]
 print(a.loc[0:3, col_names])
@@ -120,10 +112,8 @@ print(a.loc[0:3, col_names])
 # Koşullu Seçim (Conditional Selection)
 print(a[a["age"] > 50].head())  # age sütunu 50 den büyük olanları seçer.
 print(a[a["age"] > 50].count())  # age sütunu 50 den büyük olanların sayısını verir.
-print(
-    a.loc[a["age"] > 50, ["age", "class"]].head())  # age sütunu 50 den büyük olanların age ve class sütunlarını seçer.
-print(a.loc[(a["age"] > 50) & (a["sex"] == "male"), ["age",
-                                                     "class"]].head())  # Yaşı 50'den büyük ve cinsiyeti erkek olan age ve class koşullarını seç.
+print(a.loc[a["age"] > 50, ["age", "class"]].head())  # age sütunu 50 den büyük olanların age ve class sütunlarını seçer.
+print(a.loc[(a["age"] > 50) & (a["sex"] == "male"), ["age", "class"]].head())  # Yaşı 50'den büyük ve cinsiyeti erkek olan age ve class koşullarını seç.
 df_new = a.loc[(a["age"] > 50) & (a["sex"] == "male") & (
         (a["embark_town"] == "Cherbourg") | (a["embark_town"] == "Southampton")), ["age", "class", "embark_town"]]
 # Yaşı 50'den büyük ve cinsiyeti erkek olanları ve Cherbourg ve Southampton'da olanları seç. age, class, embark_town sütunlarını yaz.
