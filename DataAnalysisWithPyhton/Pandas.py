@@ -120,18 +120,19 @@ df_new = a.loc[(a["age"] > 50) & (a["sex"] == "male") & (
 
 print(df_new["embark_town"].value_counts()) # Atanan değerleri saydırır
 
+df = pd.DataFrame(a)
 # Toplulaştırma ve Gruplama (Aggregation & Grouping)
-# - count() Say
-# - first() İlk Değer
-# - last()  Son Değer
-# - mean()  Ortalaması
-# - median()Medyanı
-# - min()   Minimum Değeri
-# - max()   Max Değeri
-# - std()
-# - var()
-# - sum()
-# - pivot table
+print(df.count())        # - count()     Say
+print(df.first())        # - first()     İlk Değer
+print(df.last())         # - last()      Son Değer
+print(df.mean())         # - mean()      Ortalaması
+print(df.median())       # - median()    Medyanı
+print(df.min())          # - min()       Minimum Değeri
+print(df.max())          # - max()       Max Değeri
+print(df.std())          # - std()       Standart Sapma
+print(df.var())          # - var()
+print(df.sum())          # - sum()
+                        # - pivot table
 
 print(a["age"].mean())
 
