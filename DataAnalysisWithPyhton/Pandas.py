@@ -131,7 +131,7 @@ print(df.min())          # - min()       Minimum Değeri
 print(df.max())          # - max()       Max Değeri
 print(df.std())          # - std()       Standart Sapma
 print(df.var())          # - var()
-print(df.sum())          # - sum()
+print(df.sum())          # - sum()       Toplam
                         # - pivot table
 
 print(a["age"].mean())
@@ -186,7 +186,7 @@ for col in a.columns:
     if "age" in col:
         a[col] = a[col] // 10
 
-print(a.head)
+print(a.head)               # Başlangıcını Göster
 
 print(a[["age", "age2", "age3"]].apply(lambda x: x / 10).head())
 
