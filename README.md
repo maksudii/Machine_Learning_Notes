@@ -1,5 +1,5 @@
 
 
-## Merhaba, Makina Öğrenmesi ve pyhton ile veri analizi üzerine aldığım notları paylaşıyorum
+## Merhaba, Makina Öğrenmesi için katıldığım programlardan topladığım notları
+🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 
-### Elimden geldiğince açıklayıcı olmaya çalışacağım 😊
